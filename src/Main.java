@@ -14,9 +14,9 @@ public class Main {
         do {
             initialiserPlateau(plateau);
             jouer(plateau, joueurActuel, scanner);
-            System.out.print("Voulez-vous jouer une autre partie ? (oui/non) : ");
+            System.out.print("viens je t'attend ? (oui/non) : ");
             continuer = scanner.next();
-            joueurActuel = 'X'; // Réinitialiser le joueur pour la nouvelle partie
+            joueurActuel = 'X';
         } while (continuer.equalsIgnoreCase("oui"));
     }
 
@@ -64,22 +64,22 @@ public class Main {
             System.out.println("Tour du joueur " + joueurActuel);
 
             while (true) {
-                System.out.print("Choisissez une ligne (0, 1, 2) : ");
+                System.out.print("Choisissez une ligne entre (0, 1, 2) : ");
                 ligne = scanner.nextInt();
-                System.out.print("Choisissez une colonne (0, 1, 2) : ");
+                System.out.print("Choisissez une colonne entre(0, 1, 2) : ");
                 colonne = scanner.nextInt();
 
                 if (ligne >= 0 && ligne < 3 && colonne >= 0 && colonne < 3 && plateau[ligne][colonne] == ' ') {
                     plateau[ligne][colonne] = joueurActuel;
                     break;
                 } else {
-                    System.out.println("Case déjà occupée ou entrée invalide, veuillez réessayer.");
+                    System.out.println("Case déjà occupée ou entrée invalide,  réessayer tkt pas tu peux le faire.");
                 }
             }
 
             if (estVictoire(plateau, joueurActuel)) {
                 afficherPlateau(plateau);
-                System.out.println("Le joueur " + joueurActuel + " a gagné !");
+                System.out.println("Le boss " + joueurActuel + " a gagné !");
                 return;
             }
 
@@ -87,6 +87,6 @@ public class Main {
         }
 
         afficherPlateau(plateau);
-        System.out.println("Match nul !");
+        System.out.println("Match nul c'est pas facile force a toi !");
     }
 }
